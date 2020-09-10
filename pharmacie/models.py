@@ -85,6 +85,9 @@ class Produit(models.Model):
     update_le = models.DateTimeField(auto_now=True)
     objects = models.Manager()
 
+    def __str__(self):
+        return "%s - (%s)" % (self.nom, self.categorie)
+
 class DetailProd(models.Model):
     id  = models.AutoField(primary_key=True)
     produit_id = models.ForeignKey(Produit, on_delete=models.CASCADE)
@@ -94,6 +97,9 @@ class DetailProd(models.Model):
     add_le = models.DateTimeField(auto_now_add=True)
     update_le = models.DateTimeField(auto_now=True)
     objects = models.Manager()
+
+    def __str__(self):
+        return "%s - (%s)" %(self.salt_name, self.produit_id)
 
 class Employer(models.Model):
     id  = models.AutoField(primary_key=True)

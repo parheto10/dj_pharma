@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #'favicon',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
     'import_export',
     'django_countries',
     'django.contrib.humanize',
@@ -70,6 +71,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'dj_pharma.urls'
@@ -163,3 +166,10 @@ RES_FRAMEWORK = {
         #'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
+CORS_ALLOWED_ORIGINS = [
+    # "https://example.com",
+    # "https://sub.example.com",
+    "http://localhost:3000",
+    # "http://127.0.0.1:9000"
+]

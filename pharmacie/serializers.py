@@ -54,6 +54,11 @@ class DetailProdSerializer(serializers.ModelSerializer):
         response['produit'] = ProduitSerializer(instance.produit_id).data
         return response
 
+class DetailProdSerializerSimple(serializers.ModelSerializer):
+    class Meta:
+        model = DetailProd
+        fields = "__all__"
+
 class EmployerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employer

@@ -1,0 +1,8 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies react_front
+/node_modules
+
+# dependencies react_front
+db.sqlite3
+
